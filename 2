@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class LiterAluraApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
+
+        while (!exit) {
+            System.out.println("Bienvenido a LiterAlura:");
+            System.out.println("1. Buscar libro por título");
+            System.out.println("2. Registrar libro");
+            System.out.println("3. Listar libros registrados");
+            System.out.println("4. Listar autores registrados");
+            System.out.println("5. Listar autores vivos en un año determinado");
+            System.out.println("6. Listar libros por idioma");
+            System.out.println("0. Salir");
+            System.out.print("Por favor, seleccione una opción: ");
+
+            int option = scanner.nextInt();
+            scanner.nextLine(); // Consumir la nueva línea después del nextInt()
+
+            switch (option) {
+                case 1:
+                    buscarLibroPorTitulo(scanner);
+                    break;
+                case 2:
+                    registrarLibro(scanner);
+                    break;
+                case 3:
+                    listarLibrosRegistrados();
+                    break;
+                case 4:
+                    listarAutoresRegistrados();
+                    break;
+                case 5:
+                    listarAutoresVivosEnAnio(scanner);
+                    break;
+                case 6:
+                    listarLibrosPorIdioma(scanner);
+                    break;
+                case 0:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida, por favor seleccione una opción válida.");
+            }
+        }
+
+        System.out.println("¡Hasta luego!");
+    }
+
+    private static void buscarLibroPorTitulo(Scanner scanner) {
+        System.out.print("Ingrese el título del libro que desea buscar: ");
+        String titulo = scanner.nextLine();
+        // Lógica para buscar el libro por título e interactuar con la API Gutendex y la base de datos
+    }
+
+    private static void registrarLibro(Scanner scanner) {
+        // Lógica para registrar un libro en la base de datos
+    }
+
+    private static void listarLibrosRegistrados() {
+        // Lógica para listar los libros registrados en la base de datos
+    }
+
+    private static void listarAutoresRegistrados() {
+        // Lógica para listar los autores registrados en la base de datos
+    }
+
+    private static void listarAutoresVivosEnAnio(Scanner scanner) {
+        System.out.print("Ingrese el año para listar los autores vivos: ");
+        int anio = scanner.nextInt();
+        scanner.nextLine(); // Consumir la nueva línea después del nextInt()
+        // Lógica para listar los autores vivos en el año especificado
+    }
+
+    private static void listarLibrosPorIdioma(Scanner scanner) {
+        System.out.print("Ingrese el idioma para listar los libros: ");
+        String idioma = scanner.nextLine();
+        // Lógica para listar los libros por idioma
+    }
+}
